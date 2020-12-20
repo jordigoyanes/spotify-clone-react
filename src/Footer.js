@@ -45,7 +45,6 @@ function Footer({ spotify }) {
       });
     }
   };
-
   const skipNext = () => {
     spotify.skipToNext();
     spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -88,11 +87,11 @@ function Footer({ spotify }) {
             <p>{item.artists.map((artist) => artist.name).join(", ")}</p>
           </div>
         ) : (
-          <div className="footer__songInfo">
-            <h4>No song is playing</h4>
-            <p>...</p>
-          </div>
-        )}
+            <div className="footer__songInfo">
+              <h4>No song is playing</h4>
+              <p>...</p>
+            </div>
+          )}
       </div>
 
       <div className="footer__center">
@@ -105,12 +104,12 @@ function Footer({ spotify }) {
             className="footer__icon"
           />
         ) : (
-          <PlayCircleOutlineIcon
-            onClick={handlePlayPause}
-            fontSize="large"
-            className="footer__icon"
-          />
-        )}
+            <PlayCircleOutlineIcon
+              onClick={handlePlayPause}
+              fontSize="large"
+              className="footer__icon"
+            />
+          )}
         <SkipNextIcon onClick={skipPrevious} className="footer__icon" />
         <RepeatIcon className="footer__green" />
       </div>
